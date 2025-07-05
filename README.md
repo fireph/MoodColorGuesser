@@ -11,7 +11,7 @@ Match colors with your facial expressions using AI-powered emotion detection.
 
 ## Setup
 
-Open `index.html` in a modern browser and allow camera access.
+Go to https://fireph.github.io/MoodColorGuesser/ and allow camera access.
 
 ## Tech Stack
 
