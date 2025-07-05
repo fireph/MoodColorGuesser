@@ -9,7 +9,7 @@ Match colors with your facial expressions using AI-powered emotion detection.
 3. Sad expressions → darker colors, happy expressions → brighter colors
 4. Get scored on how close you matched!
 
-## Setup
+## Where to Play
 
 Go to https://fireph.github.io/MoodColorGuesser/ and allow camera access.
 
