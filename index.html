@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Color Guesser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Mood Color Guesser</h1>
+        <div class="game-instructions">
+            <p>Match the color with your facial expression!</p>
+            <p>Sad = Lower colors, Happy = Higher colors</p>
+        </div>
+        
+        <div class="game-area">
+            <div class="phase-display">
+                <h2 id="phaseTitle">Ready to Play!</h2>
+                <p id="phaseInstructions">Click Start Game to begin</p>
+            </div>
+            
+            <div class="color-display" id="colorDisplay">
+                <h3>Target Color</h3>
+                <div class="color-box" id="colorBox"></div>
+                <div class="timer" id="timer"></div>
+                <button id="submitGuess" class="hidden">Submit My Guess</button>
+            </div>
+            
+            <div class="webcam-section" id="webcamSection">
+                <h3>Your Expression</h3>
+                <video id="webcam" autoplay muted></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+                <div class="detected-color" id="detectedColor">
+                    <h4>Your Color</h4>
+                    <div class="detected-color-box" id="detectedColorBox"></div>
+                </div>
+            </div>
+            
+            <div class="score-section" id="scoreSection">
+                <h3>Results</h3>
+                <div class="score-display">
+                    <div class="target-color">
+                        <span>Target:</span>
+                        <div class="mini-color-box" id="targetColorBox"></div>
+                    </div>
+                    <div class="your-color">
+                        <span>Your mood:</span>
+                        <div class="mini-color-box" id="yourColorBox"></div>
+                    </div>
+                    <div class="score" id="score">Score: 0</div>
+                </div>
+                <button id="playAgain">Play Again</button>
+            </div>
+        </div>
+        
+        <div class="game-status" id="gameStatus">
+            <button id="startGame">Start Game</button>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.15.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@0.0.3/dist/face-landmarks-detection.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

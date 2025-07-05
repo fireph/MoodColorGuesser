@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 90%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.game-instructions {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.game-instructions p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.game-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.phase-display {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.phase-display h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.phase-display p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.color-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.color-display h3, .webcam-section h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.color-box {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    border: 3px solid #333;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.timer {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.webcam-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#webcam {
+    width: 200px;
+    height: 150px;
+    border-radius: 15px;
+    border: 3px solid #333;
+    object-fit: cover;
+    background: #f0f0f0;
+}
+
+.detected-color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detected-color h4 {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.detected-color-box {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    background: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.score-section {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+    display: none;
+}
+
+.score-section.show {
+    display: block;
+}
+
+.score-display {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.target-color, .your-color {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+
+.mini-color-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #333;
+}
+
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#playAgain, #startGame, #submitGuess {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#playAgain:hover, #startGame:hover, #submitGuess:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+#submitGuess {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.game-status {
+    display: flex;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        grid-template-columns: 1fr;
+    }
+    
+    .color-box {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #webcam {
+        width: 150px;
+        height: 112px;
+    }
+    
+    .score-display {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
